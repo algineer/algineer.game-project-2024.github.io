@@ -1,54 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>2024 Game Project</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: black;
-        }
-        
-        #info {
-            position: absolute;
-            top: 25%;
-            width: 100%;
-            text-align: center;
-            z-index: 100;
-            display: block;
-            color: lime;
-        }
-        
-        h1 {
-            font-size: 50px;
-        }
-    </style>
-    <script type="importmap">
-        { "imports": { "three": "https://unpkg.com/three@v0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@v0.160.0/examples/jsm/" } }
-    </script>
-</head>
+    <link href="main.css" rel="stylesheet" />
+  </head>
 
-<body>
-    <div id="info">
-        <h1>Game Title</h1>
+  <body>
+    <div id = "gameContainer">
+      <canvas id="gameCanvas"></canvas>
     </div>
-    <script type="module">
-        import * as THREE from 'three'; const scene = new THREE.Scene(); const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); const renderer = new THREE.WebGLRenderer(); renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement); const geometry = new THREE.BoxGeometry(1, 1, 1); const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); const cube = new THREE.Mesh(geometry, material); scene.add(cube); camera.position.z
-        = 5; function animate() { requestAnimationFrame(animate); cube.rotation.x += 0.01; cube.rotation.y += 0.01; renderer.render(scene, camera); } animate();
-    </script>
-    <script>
-        const pulseText = () => {
-            let text = document.querySelector("#info > h1")
-            if (text.style.fontSize == '50px')
-                text.style.fontSize = '52px'
-            else
-                text.style.fontSize = '50px'
-            setTimeout(pulseText, 500)
-        }
-        requestAnimationFrame(pulseText)
-    </script>
-</body>
 
+    <!-- Game Scripts -->
+    <script src = "WorldMap.js"></script>
+    <script src = "MovementController.js"></script>
+
+
+    <!-- Main Game File -->
+    <script src = "Game.js"></script>
+    <!-- <script src = "Main.js"></script> -->
+
+  </body>
 </html>
