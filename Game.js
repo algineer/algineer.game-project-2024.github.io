@@ -14,14 +14,14 @@ class Game {
 
         this.aspectRatio = 16/9
 
-        this.start() //Auto Start the game
+        this.init() //Initalize the game
     }
 
     gameRenderer() {
 
         //Set the game canvas to follow the window size
-        this.canvas.height = window.innerHeight 
-        this.canvas.width = window.innerWidth
+        // this.canvas.height = window.innerHeight 
+        // this.canvas.width = window.innerWidth
 
         //Clear off the canvas
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -71,7 +71,7 @@ class Game {
     }
 
     //Start the game
-    start() {
+    init() {
         //get game container so we can add more elements as needed
         const gameContainer = document.getElementById('gameContainer')
 

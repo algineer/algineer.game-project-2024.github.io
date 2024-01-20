@@ -4,35 +4,55 @@
 
 body {
   background: var(--color1);
-  padding: 0;
   margin: 0;
   overflow: hidden;
   touch-action: none;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
 }
 
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+#header,
+#footer {
+  width: 100%;
+}
+
+#header {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #gameContainer {
   position: relative;
-  width: 100svw;
-  height: 100svh;
-  margin: 0 auto;
-  
-  display: flex; 
-	justify-content: center; /* center horizontally */ 
-	align-items: center; /* center vertically */ 
+  width: 80vw; /* Adjust this as needed */
+  height: 45vw; /* Maintain 16:9 aspect ratio (80 * 9 / 16) */
+  overflow: hidden;
 }
 
 #gameCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: gray;
-  
   image-rendering: pixelated;
-  /* image-rendering: crisp-edges; */
-  /* image-rendering: auto; */
-  scale: 3
+  /* Add other styles as needed */
+}
 
+#footer {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
