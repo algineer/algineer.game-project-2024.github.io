@@ -27,6 +27,7 @@ body {
 
 #header {
   height: 5vh;
+  color: lime;
   display: flex;
   justify-content: center;
   align-items: center;
